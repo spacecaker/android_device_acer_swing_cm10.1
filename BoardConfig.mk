@@ -48,13 +48,12 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 TARGET_BOOTANIMATION_PRELOAD := true
 
 # Audio
-BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_FLUENCE_INCALL := true
 BOARD_USES_SEPERATED_AUDIO_INPUT := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-TARGET_CUSTOM_BLUEDROID := ../../../device/acer/swing/bluetooth/bluetooth.c
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/acer/swing/bluetooth
 
 # FM radio
 BOARD_HAVE_QCOM_FM := true

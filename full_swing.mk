@@ -23,5 +23,25 @@
 #
 
 # Inherit from those products. Most specific first.
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+
+# Torch
+PRODUCT_PACKAGES := \
+    Torch
+
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit from mint device
+$(call inherit-product, device/acer/swing/device_swing.mk)
+
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+# Set those variables here to overwrite the inherited values.
+PRODUCT_DEVICE := swing
+PRODUCT_NAME := cm_swing
+PRODUCT_BRAND := acer
+PRODUCT_MODEL := CloudMobile
+PRODUCT_MANUFACTURER := acer
 
