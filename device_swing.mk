@@ -88,35 +88,33 @@ PRODUCT_PACKAGES += \
     libalsa-intf \
     libaudioutils
 
-# Graphics
+# QCOM Display
 PRODUCT_PACKAGES += \
-    copybit.msm8960 \
-    gralloc.msm8960 \
-    hwcomposer.msm8960 \
     libgenlock \
-    libhwcexternal \
-    libhwcservice \
     libmemalloc \
     liboverlay \
     libqdutils \
-    libtilerenderer
+    libtilerenderer \
+    libI420colorconvert
 
-# OMX
+# Omx
 PRODUCT_PACKAGES += \
-    libdivxdrmdecrypt \
-    libI420colorconvert \
-    libmm-omxcore \
-    libOmxCore \
-    libOmxVdec \
-    libOmxVenc \
     libOmxAacEnc \
     libOmxAmrEnc \
+    libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libOmxVdec \
+    libOmxVenc \
+    libc2dcolorconvert \
+    libdashplayer \
+    libdivxdrmdecrypt \
+    libmm-omxcore \
     libstagefrighthw
 
 # Power
 PRODUCT_PACKAGES += \
+    power.qcom	\
     power.msm8960
 
 # HDMI
@@ -126,6 +124,32 @@ PRODUCT_PACKAGES += \
 # QCOM rngd
 PRODUCT_PACKAGES += \
     qrngd
+
+# QCOM Display
+PRODUCT_PACKAGES += \
+    hwcomposer.msm8960 \
+    gralloc.msm8960 \
+    copybit.msm8960
+
+# Audio
+PRODUCT_PACKAGES += \
+    alsa.msm8960 \
+    audio_policy.msm8960 \
+    audio.primary.msm8960 \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
+    libaudio-resampler \
+    tinymix
+
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.audio.fluence.mode=endfire \
+    persist.audio.handset.mic=analog \
+    persist.audio.lowlatency.rec=false \
+    af.resampler.quality=255 \
+    ro.qc.sdk.audio.fluencetype=none \
+    lpa.decode=true
 
 # USB
 PRODUCT_PACKAGES += \
@@ -201,6 +225,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     debug.mdpcomp.logs=0 \
 	dev.pm.dyn_samplingrate=1
+
+# QCOM
+PRODUCT_PROPERTY_OVERRIDES += \
+    com.qc.hardware=true
+
+# Qualcomm random numbers generated
+PRODUCT_PACKAGES += qrngd
 
 # Audio overrides
 PRODUCT_PROPERTY_OVERRIDES += \
