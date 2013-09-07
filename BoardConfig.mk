@@ -69,10 +69,8 @@ ARCH_ARM_HAVE_NEON := TRUE
 BOARD_EGL_CFG := device/acer/swing/configs/egl.cfg
 
 
-# Wifi
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-BOARD_HOSTAPD_DRIVER             := NL80211
+# Wifi Driver
+CONFIG_DRIVER_NL80211 := true
 BOARD_WLAN_DEVICE                := qcwcn
 WIFI_EXT_MODULE_NAME             := cfg80211
 WIFI_EXT_MODULE_PATH             := "/system/lib/modules/cfg80211.ko"
@@ -90,7 +88,6 @@ TARGET_BOOTLOADER_BOARD_NAME := swing
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
-BOARD_MKBOOTIMG_ARGS := 0x81500000
 
 # Use libril in the device tree
 BOARD_PROVIDES_LIBRIL := false
